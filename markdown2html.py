@@ -55,6 +55,18 @@ if __name__ == '__main__':
                     line = '<h{}>'.format(
                         heading_num) + headings.strip() + '</h{}>\n'.format(
                         heading_num)
+                if unordered_num:
+                    if not unordered_start:
+                        html.write('<ul>\n')
+                        unordered_start = True
+                    line = '<li>' + unordered.strip() + '</li>\n'
+                if unordered_start and not unordered_num:
+                    html.write('</ul>\n')
+                    unordered_start = False
+                if unordered_start:
+                    html.write('</ul>\n')
 
+                
                
+
     exit (0)
