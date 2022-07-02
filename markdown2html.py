@@ -65,14 +65,7 @@ if __name__ == '__main__':
                     html.write('</ul>\n')
                     unordered_start = False
 
-                if ordered_num:
-                    if not ordered_start:
-                        html.write('<ol>\n')
-                        ordered_start = True
-                    line = '<li>' + ordered.strip() + '</li>\n'
-                if ordered_start and not ordered_num:
-                    html.write('</ol>\n')
-                    ordered_start = False
+               
 
                 if not (heading_num or unordered_start or ordered_start):
                     if not paragraph and length > 1:
